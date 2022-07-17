@@ -8,4 +8,4 @@ INSERT INTO user_roles(user_id, role) SELECT id, 'ROLE_USER' FROM users WHERE lo
 INSERT INTO user_roles(user_id, role) SELECT id, 'ROLE_ADMIN' FROM users WHERE login = 'vasya';
 -- INSERT INTO user_roles(user_id, role) VALUES(1, 'ROLE_ADMIN';
 
-INSERT INTO posts(content, geo_lat, geo_lng) VALUES ('first post', 55.0, 45.00);
+INSERT INTO posts(author_id, content, geo_lat, geo_lng) SELECT id, 'first post', 55.0, 45.00 FROM users WHERE login = 'vasya';

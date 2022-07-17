@@ -18,6 +18,9 @@ public class PostEntity {
     @Id // требование Entity
     @GeneratedValue(strategy = GenerationType.IDENTITY) // только для удобства
     private long id;
+    @JoinColumn(name="author_id")
+    @ManyToOne(optional = false)
+    private UserEntity author;
     @Column(nullable = false, columnDefinition = "TEXT")
     private String content;
     @ElementCollection
